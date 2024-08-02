@@ -7,7 +7,7 @@ const ListProduct = () => {
   const [allproducts, setAllProducts] = useState([]);
 
   const fetchInfo = () => {
-    fetch("http://34.204.8.6:4000/allproducts")
+    fetch("http://44.202.54.225:4000/allproducts")
       .then((res) => res.json())
       .then((data) => setAllProducts(data));
   };
@@ -17,7 +17,7 @@ const ListProduct = () => {
   }, []);
 
   const removeProduct = async (id) => {
-    await fetch("http://34.204.8.6:4000/removeproduct", {
+    await fetch("http://44.202.54.225:4000/removeproduct", {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -26,7 +26,7 @@ const ListProduct = () => {
       body: JSON.stringify({ id: id }),
     });
 
-    fetch("http://34.204.8.6:4000/allproducts")
+    fetch("http://44.202.54.225:4000/allproducts")
       .then((res) => res.json())
       .then((data) => setAllProducts(data));
   };
