@@ -6,7 +6,7 @@ const WebsiteList = () => {
 
   // Fetch all products from the server
   const fetchInfo = () => {
-    fetch("http://localhost:4000/allwebproducts")
+    fetch("http://54.210.0.55:4000/allwebproducts")
       .then((res) => res.json())
       .then((data) => setAllwebProducts(data))
       .catch((error) => console.error("Error fetching products:", error));
@@ -20,7 +20,7 @@ const WebsiteList = () => {
     <div className="something">
       <Sidebar />
       <div className="listproduct">
-        <h1>All  WebSite change List</h1>
+        <h1>All WebSite change List</h1>
         <div className="listproduct-format-main">
           <p> website change</p>
           <p>Title</p>
@@ -34,18 +34,51 @@ const WebsiteList = () => {
           <hr />
           {allwebproducts.length > 0 ? (
             allwebproducts.map((website) => (
-              <div key={website._id} className="listproduct-format-main listproduct-format">
+              <div
+                key={website._id}
+                className="listproduct-format-main listproduct-format"
+              >
                 <img
                   className="listproduct-product-icon"
-                  src={website.webimage1 || 'placeholder.jpg'}
+                  src={website.webimage1 || "placeholder.jpg"}
                   alt="Product"
                 />
                 <div className="listproduct-product-icons">
-                  {website.webimage2 && <img className="listproduct-product-icon" src={website.webimage2} alt="Product" />}
-                  {website.webimage3 && <img className="listproduct-product-icon" src={website.webimage3} alt="Product" />}
-                  {website.webimage4 && <img className="listproduct-product-icon" src={website.webimage4} alt="Product" />}
-                  {website.webimage5 && <img className="listproduct-product-icon" src={website.webimage5} alt="Product" />}
-                  {website.webimage6 && <img className="listproduct-product-icon" src={website.webimage6} alt="Product" />}
+                  {website.webimage2 && (
+                    <img
+                      className="listproduct-product-icon"
+                      src={website.webimage2}
+                      alt="Product"
+                    />
+                  )}
+                  {website.webimage3 && (
+                    <img
+                      className="listproduct-product-icon"
+                      src={website.webimage3}
+                      alt="Product"
+                    />
+                  )}
+                  {website.webimage4 && (
+                    <img
+                      className="listproduct-product-icon"
+                      src={website.webimage4}
+                      alt="Product"
+                    />
+                  )}
+                  {website.webimage5 && (
+                    <img
+                      className="listproduct-product-icon"
+                      src={website.webimage5}
+                      alt="Product"
+                    />
+                  )}
+                  {website.webimage6 && (
+                    <img
+                      className="listproduct-product-icon"
+                      src={website.webimage6}
+                      alt="Product"
+                    />
+                  )}
                 </div>
                 <p className="listproduct-product-title">{website.webname}</p>
                 <p>Rs.{website.webold_price}</p>

@@ -3,7 +3,14 @@ import upload_area from "../Assets/upload_area.svg";
 import Sidebar from "../Sidebar/Sidebar";
 
 const Website = () => {
-  const [webImages, setWebImages] = useState([null, null, null, null, null, null]);
+  const [webImages, setWebImages] = useState([
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+  ]);
   const [websiteDetails, setWebsiteDetails] = useState({
     webname: "",
     webnew_price: "",
@@ -29,7 +36,7 @@ const Website = () => {
       if (image) formData.append("website", image);
     });
 
-    const response = await fetch("http://localhost:4000/website", {
+    const response = await fetch("http://54.210.0.55:4000/website", {
       method: "POST",
       headers: { Accept: "application/json" },
       body: formData,
@@ -48,7 +55,7 @@ const Website = () => {
         webimage6: data.webimage6_url,
       };
 
-      const result = await fetch("http://localhost:4000/addwebsite", {
+      const result = await fetch("http://54.210.0.55:4000/addwebsite", {
         method: "POST",
         headers: {
           Accept: "application/json",
@@ -67,7 +74,7 @@ const Website = () => {
       <Sidebar />
       <div className="addproduct">
         <div className="addproduct-itemfield">
-          <h2>  Website change </h2>
+          <h2> Website change </h2>
           <p>Product title</p>
           <input
             type="text"
@@ -153,10 +160,7 @@ const Website = () => {
             </div>
           ))}
         </div>
-        <button
-          className="addproduct-btn"
-          onClick={addProduct}
-        >
+        <button className="addproduct-btn" onClick={addProduct}>
           ADD
         </button>
       </div>
