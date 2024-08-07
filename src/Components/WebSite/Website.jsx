@@ -36,7 +36,7 @@ const Website = () => {
       if (image) formData.append("website", image);
     });
 
-    const response = await fetch("http://44.202.54.225:4000/website", {
+    const response = await fetch("http://34.229.212.238:4000/website", {
       method: "POST",
       headers: { Accept: "application/json" },
       body: formData,
@@ -55,7 +55,7 @@ const Website = () => {
         webimage6: data.webimage6_url,
       };
 
-      const result = await fetch("http://44.202.54.225:4000/addwebsite", {
+      const result = await fetch("http://34.229.212.238:4000/addwebsite", {
         method: "POST",
         headers: {
           Accept: "application/json",
