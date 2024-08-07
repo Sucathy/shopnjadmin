@@ -15,7 +15,7 @@ const LoginSignup = () => {
 
   const login = async () => {
     let dataObj;
-    await fetch("http://34.229.212.238:4000/adminlogin", {
+    await fetch("http://34.224.29.145:4000/adminlogin", {
       method: "POST",
       headers: {
         Accept: "application/form-data",
