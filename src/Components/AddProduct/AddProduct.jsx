@@ -37,7 +37,7 @@ const AddProduct = () => {
     formData.append("product", image5);
     formData.append("product", image6);
 
-    await fetch("http://34.224.29.145:4000/upload", {
+    await fetch("http://34.235.157.244:4000/upload", {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -57,7 +57,7 @@ const AddProduct = () => {
       product.image5 = dataObj.image5_url;
       product.image6 = dataObj.image6_url;
       console.log(product);
-      await fetch("http://34.224.29.145:4000/addproduct", {
+      await fetch("http://34.235.157.244:4000/addproduct", {
         method: "POST",
         headers: {
           Accept: "application/json",
