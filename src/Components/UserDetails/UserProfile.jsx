@@ -9,7 +9,7 @@ const UserDetails = () => {
   // Fetch user data from the API
   const fetchInfo = async () => {
     try {
-      const res = await fetch("http://52.90.235.25:4000/allusers");
+      const res = await fetch("http://54.227.62.35:4000/allusers");
       const data = await res.json();
       // Ensure data is an array
       if (Array.isArray(data)) {
