@@ -36,7 +36,7 @@ const Website = () => {
       if (image) formData.append("website", image);
     });
 
-    const response = await fetch("https://shopnjs.onrender.com/website", {
+    const response = await fetch("http://localhost:4000/website", {
       method: "POST",
       headers: { Accept: "application/json" },
       body: formData,
@@ -55,7 +55,7 @@ const Website = () => {
         webimage6: data.webimage6_url,
       };
 
-      const result = await fetch("https://shopnjs.onrender.com/addwebsite", {
+      const result = await fetch("http://localhost:4000/addwebsite", {
         method: "POST",
         headers: {
           Accept: "application/json",

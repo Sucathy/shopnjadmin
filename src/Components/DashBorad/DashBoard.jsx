@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../Assets/logo2.jpeg";
-import menu_icon from "../Assets/menuicon2.svg";
+import menu_icon from "../Assets/menuicon2 copy.svg";
 import "./DashBoard.css";
 
 const DashBoard = ({ toggleSidebar }) => {
