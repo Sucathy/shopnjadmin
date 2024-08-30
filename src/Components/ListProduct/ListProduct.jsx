@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import cross_icon from "../Assets/cross_icon.png";
-import Sidebar from "../Sidebar/Sidebar";
+import DashBoard from "../DashBorad/DashBoard";
 import "./ListProduct.css";
 
 const ListProduct = () => {
@@ -32,78 +32,80 @@ const ListProduct = () => {
   };
 
   return (
-    <div className="something">
-      <Sidebar />
-      <div className="listproduct">
-        <h1>All Products List</h1>
-        <div className="listproduct-format-main">
-          <p>Products</p>
-          <p>Title</p>
-          <p>Old Price</p>
-          <p>New Price</p>
-          <p>Category</p>
-          <p>descriptions</p>
-          <p>Remove</p>
-        </div>
-        <div className="listproduct-allproducts">
-          <hr />
-          {allproducts.map((e) => {
-            return (
-              <div>
-                <div className="listproduct-format-main listproduct-format">
-                  <img
-                    className="listproduct-product-icon"
-                    src={e.image}
-                    alt=""
-                  />
-                  <div className="listproduct-product-icon1">
+    <>
+      <DashBoard />
+      <div className="something">
+        <div className="listproduct">
+          <h1>All Products List</h1>
+          <div className="listproduct-format-main">
+            <p>Products</p>
+            <p>Title</p>
+            <p>Old Price</p>
+            <p>New Price</p>
+            <p>Category</p>
+            <p>descriptions</p>
+            <p>Remove</p>
+          </div>
+          <div className="listproduct-allproducts">
+            <hr />
+            {allproducts.map((e) => {
+              return (
+                <div>
+                  <div className="listproduct-format-main listproduct-format">
                     <img
-                      className="listproduct-product-icon1"
-                      src={e.image2}
+                      className="listproduct-product-icon"
+                      src={e.image}
                       alt=""
                     />
+                    <div className="listproduct-product-icon1">
+                      <img
+                        className="listproduct-product-icon1"
+                        src={e.image2}
+                        alt=""
+                      />
+                      <img
+                        className="listproduct-product-icon1"
+                        src={e.image3}
+                        alt=""
+                      />
+                      <img
+                        className="listproduct-product-icon1"
+                        src={e.image4}
+                        alt=""
+                      />
+                      <img
+                        className="listproduct-product-icon1"
+                        src={e.image5}
+                        alt=""
+                      />
+                      <img
+                        className="listproduct-product-icon1"
+                        src={e.image6}
+                        alt=""
+                      />
+                    </div>
+                    <p>{e.name}</p>
+                    <p>Rs.{e.old_price}</p>
+                    <p>Rs.{e.new_price}</p>
+                    <p>{e.category}</p>
+                    <p>{e.descriptions}</p>
                     <img
-                      className="listproduct-product-icon1"
-                      src={e.image3}
-                      alt=""
-                    />
-                    <img
-                      className="listproduct-product-icon1"
-                      src={e.image4}
-                      alt=""
-                    />
-                    <img
-                      className="listproduct-product-icon1"
-                      src={e.image5}
-                      alt=""
-                    />
-                    <img
-                      className="listproduct-product-icon1"
-                      src={e.image6}
+                      className="listproduct-remove-icon"
+                      onClick={() => {
+                        removeProduct(e.id);
+                      }}
+                      src={cross_icon}
                       alt=""
                     />
                   </div>
-                  <p cartitems-product-title>{e.name}</p>
-                  <p>Rs.{e.old_price}</p>
-                  <p>Rs.{e.new_price}</p>
-                  <p>{e.category}</p>
-                  <p>{e.descriptions}</p>
-                  <img
-                    className="listproduct-remove-icon"
-                    onClick={() => {
-                      removeProduct(e.id);
-                    }}
-                    src={cross_icon}
-                    alt=""
-                  />
+                  <hr />
                 </div>
-                <hr />
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

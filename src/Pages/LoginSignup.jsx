@@ -101,14 +101,14 @@ const LoginSignup = () => {
 
         {state === "Login" ? (
           <p className="loginsignup-login">
-            Create an account?{" "}
+            {/* Create an account?{" "}
             <span
               onClick={() => {
                 setState("Sign Up");
               }}
             >
               Click here
-            </span>
+            </span> */}
           </p>
         ) : (
           <p className="loginsignup-login">
@@ -123,10 +123,7 @@ const LoginSignup = () => {
           </p>
         )}
 
-        <div className="loginsignup-agree">
-          <input type="checkbox" name="" id="" />
-          <p>By continuing, i agree to the terms of use & privacy policy.</p>
-        </div>
+        <div className="loginsignup-agree"></div>
       </div>
     </div>
   );

@@ -1,15 +1,19 @@
 .something {
   display: flex;
+  width: 100%;
+  flex-direction: column;
+
+  border-radius: 6px;
+  background: #000000;
 }
 
 .addproduct {
   box-sizing: border-box;
   width: 100%;
-  max-width: 800px;
-  padding: 30px 50px;
-  margin: 20px 30px;
+  padding: 40px;
   border-radius: 6px;
-  background: #fff;
+  background: #ffffff;
+  border: #000000;
 }
 
 .addproduct-itemfield {

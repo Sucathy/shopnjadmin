@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import upload_area from "../Assets/upload_area.svg";
-import Sidebar from "../Sidebar/Sidebar";
+// import Sidebar from "../Sidebar/Sidebar";
+import DashBoard from "../DashBorad/DashBoard";
 import "./AddProduct.css";
 
 const AddProduct = () => {
@@ -100,28 +101,72 @@ const AddProduct = () => {
   };
 
   return (
-    <div className="something">
-      <Sidebar />
-      <div className="addproduct">
-        <div className="addproduct-itemfield">
-          <p>Product title</p>
-          <input
-            type="text"
-            name="name"
-            value={productDetails.name}
-            onChange={(e) => {
-              changeHandler(e);
-            }}
-            placeholder="Type here"
-          />
-        </div>
-        <div className="addproduct-price">
+    <>
+      <DashBoard />
+
+      <div className="something">
+        {/* <Sidebar /> */}
+        <div className="addproduct">
           <div className="addproduct-itemfield">
-            <p>Price</p>
+            <p>Product title</p>
             <input
               type="text"
-              name="old_price"
-              value={productDetails.old_price}
+              name="name"
+              value={productDetails.name}
+              onChange={(e) => {
+                changeHandler(e);
+              }}
+              placeholder="Type here"
+            />
+          </div>
+          <div className="addproduct-price">
+            <div className="addproduct-itemfield">
+              <p>Price</p>
+              <input
+                type="text"
+                name="old_price"
+                value={productDetails.old_price}
+                onChange={(e) => {
+                  changeHandler(e);
+                }}
+                placeholder="Type here"
+              />
+            </div>
+            <div className="addproduct-itemfield">
+              <p>Offer Price</p>
+              <input
+                type="text"
+                name="new_price"
+                value={productDetails.new_price}
+                onChange={(e) => {
+                  changeHandler(e);
+                }}
+                placeholder="Type here"
+              />
+            </div>
+          </div>
+          <div className="addproduct-itemfield">
+            <p>Product category</p>
+            <select
+              name="category"
+              value={productDetails.category}
+              onChange={(e) => {
+                changeHandler(e);
+              }}
+            >
+              <option value="">Select an option</option>
+              <option value="men">men</option>
+              <option value="women">women</option>
+              <option value="kid">kid</option>
+              <option value="NewCollections">NewCollections</option>
+            </select>
+          </div>
+          <div className="addproduct-itemfield">
+            <p>Product tags</p>
+            <input
+              type="text"
+              name="tags"
+              value={productDetails.tags}
               onChange={(e) => {
                 changeHandler(e);
               }}
@@ -129,170 +174,130 @@ const AddProduct = () => {
             />
           </div>
           <div className="addproduct-itemfield">
-            <p>Offer Price</p>
+            <p>descriptions</p>
             <input
               type="text"
-              name="new_price"
-              value={productDetails.new_price}
+              name="descriptions"
+              value={productDetails.descriptions}
               onChange={(e) => {
                 changeHandler(e);
               }}
-              placeholder="Type here"
+              placeholder="Type here descriptions"
             />
           </div>
-        </div>
-        <div className="addproduct-itemfield">
-          <p>Product category</p>
-          <select
-            name="category"
-            value={productDetails.category}
-            onChange={(e) => {
-              changeHandler(e);
+          <div className="addproduct-itemfield">
+            <p>Product Image</p>
+            <label for="file-input">
+              <img
+                className="addproduct-thumbnail-img"
+                src={!image ? upload_area : URL.createObjectURL(image)}
+                alt=""
+              />
+            </label>
+            <input
+              onChange={(e) => {
+                imageHandler(e);
+              }}
+              type="file"
+              name="image"
+              id="file-input"
+              hidden
+            />
+          </div>
+          <div className="addproduct-itemfield">
+            <p>Product colour Image</p>
+            <label for="file-input2">
+              <img
+                className="addproduct-thumbnail-img"
+                src={!image2 ? upload_area : URL.createObjectURL(image2)}
+                alt=""
+              />
+            </label>
+            <input
+              onChange={(e) => {
+                imageHandler2(e);
+              }}
+              type="file"
+              name="image2"
+              id="file-input2"
+              hidden
+            />
+            <label for="file-input3">
+              <img
+                className="addproduct-thumbnail-img"
+                src={!image3 ? upload_area : URL.createObjectURL(image3)}
+                alt=""
+              />
+            </label>
+            <input
+              onChange={(e) => {
+                imageHandler3(e);
+              }}
+              type="file"
+              name="image3"
+              id="file-input3"
+              hidden
+            />
+            <label for="file-input4">
+              <img
+                className="addproduct-thumbnail-img"
+                src={!image4 ? upload_area : URL.createObjectURL(image4)}
+                alt=""
+              />
+            </label>
+            <input
+              onChange={(e) => {
+                imageHandler4(e);
+              }}
+              type="file"
+              name="image4"
+              id="file-input4"
+              hidden
+            />
+            <label for="file-input5">
+              <img
+                className="addproduct-thumbnail-img"
+                src={!image5 ? upload_area : URL.createObjectURL(image5)}
+                alt=""
+              />
+            </label>
+            <input
+              onChange={(e) => {
+                imageHandler5(e);
+              }}
+              type="file"
+              name="image5"
+              id="file-input5"
+              hidden
+            />
+            <label for="file-input6">
+              <img
+                className="addproduct-thumbnail-img"
+                src={!image6 ? upload_area : URL.createObjectURL(image6)}
+                alt=""
+              />
+            </label>
+            <input
+              onChange={(e) => {
+                imageHandler6(e);
+              }}
+              type="file"
+              name="image6"
+              id="file-input6"
+              hidden
+            />
+          </div>
+          <button
+            className="addproduct-btn"
+            onClick={() => {
+              AddProduct();
             }}
           >
-            <option value="">Select an option</option>
-            <option value="men">men</option>
-            <option value="women">women</option>
-            <option value="kid">kid</option>
-            <option value="NewCollections">NewCollections</option>
-          </select>
+            ADD
+          </button>
         </div>
-        <div className="addproduct-itemfield">
-          <p>Product tags</p>
-          <input
-            type="text"
-            name="tags"
-            value={productDetails.tags}
-            onChange={(e) => {
-              changeHandler(e);
-            }}
-            placeholder="Type here"
-          />
-        </div>
-        <div className="addproduct-itemfield">
-          <p>descriptions</p>
-          <input
-            type="text"
-            name="descriptions"
-            value={productDetails.descriptions}
-            onChange={(e) => {
-              changeHandler(e);
-            }}
-            placeholder="Type here descriptions"
-          />
-        </div>
-        <div className="addproduct-itemfield">
-          <p>Product Image</p>
-          <label for="file-input">
-            <img
-              className="addproduct-thumbnail-img"
-              src={!image ? upload_area : URL.createObjectURL(image)}
-              alt=""
-            />
-          </label>
-          <input
-            onChange={(e) => {
-              imageHandler(e);
-            }}
-            type="file"
-            name="image"
-            id="file-input"
-            hidden
-          />
-        </div>
-        <div className="addproduct-itemfield">
-          <p>Product colour Image</p>
-          <label for="file-input2">
-            <img
-              className="addproduct-thumbnail-img"
-              src={!image2 ? upload_area : URL.createObjectURL(image2)}
-              alt=""
-            />
-          </label>
-          <input
-            onChange={(e) => {
-              imageHandler2(e);
-            }}
-            type="file"
-            name="image2"
-            id="file-input2"
-            hidden
-          />
-          <label for="file-input3">
-            <img
-              className="addproduct-thumbnail-img"
-              src={!image3 ? upload_area : URL.createObjectURL(image3)}
-              alt=""
-            />
-          </label>
-          <input
-            onChange={(e) => {
-              imageHandler3(e);
-            }}
-            type="file"
-            name="image3"
-            id="file-input3"
-            hidden
-          />
-          <label for="file-input4">
-            <img
-              className="addproduct-thumbnail-img"
-              src={!image4 ? upload_area : URL.createObjectURL(image4)}
-              alt=""
-            />
-          </label>
-          <input
-            onChange={(e) => {
-              imageHandler4(e);
-            }}
-            type="file"
-            name="image4"
-            id="file-input4"
-            hidden
-          />
-          <label for="file-input5">
-            <img
-              className="addproduct-thumbnail-img"
-              src={!image5 ? upload_area : URL.createObjectURL(image5)}
-              alt=""
-            />
-          </label>
-          <input
-            onChange={(e) => {
-              imageHandler5(e);
-            }}
-            type="file"
-            name="image5"
-            id="file-input5"
-            hidden
-          />
-          <label for="file-input6">
-            <img
-              className="addproduct-thumbnail-img"
-              src={!image6 ? upload_area : URL.createObjectURL(image6)}
-              alt=""
-            />
-          </label>
-          <input
-            onChange={(e) => {
-              imageHandler6(e);
-            }}
-            type="file"
-            name="image6"
-            id="file-input6"
-            hidden
-          />
-        </div>
-        <button
-          className="addproduct-btn"
-          onClick={() => {
-            AddProduct();
-          }}
-        >
-          ADD
-        </button>
       </div>
-    </div>
+    </>
   );
 };
 

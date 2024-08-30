@@ -1,48 +1,56 @@
 .sidebar {
-  display: flex;
-  flex-direction: column;
-  padding-top: 30px;
-  gap: 20px;
-  width: 100%;
-  max-width: 250px;
-  height: 100vh;
-  background: white;
-  position: sticky;
-  top: 0; /* Ensure sticky position works */
+  position: fixed;
+  top: 0;
+  left: -50%; /* Initially hidden off-screen to the left */
+  width: 40%;
+  margin-top: 80px;
+  height: 100%;
+  background-color: #000000; /* Background color */
+  color: white;
+  transition: left 0.4s ease-in-out;
+  padding: 1rem;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+  z-index: 1000; /* Ensure it is on top of other content */
 }
 
-.sidebar-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 20px;
-  padding: 10px 15px;
-  border-radius: 6px;
-  background: #f6f6f6;
-  gap: 20px;
+.sidebar.open {
+  left: 0;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
   cursor: pointer;
-  transition: background 0.3s; /* Smooth hover transition */
+  top: 5px;
+  right: 1px;
+  position: absolute;
+  z-index: 1100; /* Ensure close button is on top of sidebar */
 }
 
-.sidebar-item:hover {
-  background: #e0e0e0; /* Change background on hover */
+.sidebar ul {
+  list-style: none;
+  padding: 4px;
 }
 
-@media (max-width: 800px) {
-  .sidebar {
-    padding: 30px 0;
-    flex-direction: row;
-    width: 100%;
-    max-width: none;
-    height: auto;
-    justify-content: center;
-  }
+.sidebar ul li {
+  margin: 1rem 0;
+}
 
-  .sidebar-item {
-    margin: 0;
-    padding: 10px;
-    flex: 1; /* Distribute items evenly */
-    justify-content: center;
-    text-align: center; /* Center the text */
-  }
+.link-btn {
+  background: none;
+  border: none;
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.link-btn:hover {
+  text-decoration: underline;
+}
+
+body {
+  overflow-x: hidden; /* Hide horizontal scrollbar when sidebar is open */
 }

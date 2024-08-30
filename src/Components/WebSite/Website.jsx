@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import upload_area from "../Assets/upload_area.svg";
-import Sidebar from "../Sidebar/Sidebar";
+import DashBoard from "../DashBorad/DashBoard";
 
 const Website = () => {
   const [webImages, setWebImages] = useState([
@@ -70,101 +70,104 @@ const Website = () => {
   };
 
   return (
-    <div className="something">
-      <Sidebar />
-      <div className="addproduct">
-        <div className="addproduct-itemfield">
-          <h2> Website change </h2>
-          <p>Product title</p>
-          <input
-            type="text"
-            name="webname"
-            value={websiteDetails.webname}
-            onChange={handleChange}
-            placeholder="Type here"
-          />
-        </div>
-        <div className="addproduct-price">
+    <>
+      <DashBoard />
+      <div className="something">
+        {/* <Sidebar /> */}
+        <div className="addproduct">
           <div className="addproduct-itemfield">
-            <p>Price</p>
+            <h2> Website change </h2>
+            <p>Product title</p>
             <input
               type="text"
-              name="webold_price"
-              value={websiteDetails.webold_price}
+              name="webname"
+              value={websiteDetails.webname}
               onChange={handleChange}
               placeholder="Type here"
             />
           </div>
-          <div className="addproduct-itemfield">
-            <p>Offer Price</p>
-            <input
-              type="text"
-              name="webnew_price"
-              value={websiteDetails.webnew_price}
-              onChange={handleChange}
-              placeholder="Type here"
-            />
-          </div>
-        </div>
-        <div className="addproduct-itemfield">
-          <p>Product category</p>
-          <select
-            name="webcategory"
-            value={websiteDetails.webcategory}
-            onChange={handleChange}
-          >
-            <option value="">Select an option</option>
-            <option value="men">men</option>
-            <option value="women">women</option>
-            <option value="kid">kid</option>
-            <option value="NewCollections">NewCollections</option>
-          </select>
-        </div>
-        <div className="addproduct-itemfield">
-          <p>Product tags</p>
-          <input
-            type="text"
-            name="webtags"
-            value={websiteDetails.webtags}
-            onChange={handleChange}
-            placeholder="Type here"
-          />
-        </div>
-        <div className="addproduct-itemfield">
-          <p>Description</p>
-          <input
-            type="text"
-            name="webdescriptions"
-            value={websiteDetails.webdescriptions}
-            onChange={handleChange}
-            placeholder="Type here descriptions"
-          />
-        </div>
-        <div className="addproduct-itemfield">
-          <p>Product Images</p>
-          {webImages.map((image, index) => (
-            <div key={index} className="addproduct-itemfield">
-              <label htmlFor={`file-input${index}`}>
-                <img
-                  className="addproduct-thumbnail-img"
-                  src={!image ? upload_area : URL.createObjectURL(image)}
-                  alt={`Upload Preview ${index + 1}`}
-                />
-              </label>
+          <div className="addproduct-price">
+            <div className="addproduct-itemfield">
+              <p>Price</p>
               <input
-                type="file"
-                id={`file-input${index}`}
-                hidden
-                onChange={handleImageChange(index)}
+                type="text"
+                name="webold_price"
+                value={websiteDetails.webold_price}
+                onChange={handleChange}
+                placeholder="Type here"
               />
             </div>
-          ))}
+            <div className="addproduct-itemfield">
+              <p>Offer Price</p>
+              <input
+                type="text"
+                name="webnew_price"
+                value={websiteDetails.webnew_price}
+                onChange={handleChange}
+                placeholder="Type here"
+              />
+            </div>
+          </div>
+          <div className="addproduct-itemfield">
+            <p>Product category</p>
+            <select
+              name="webcategory"
+              value={websiteDetails.webcategory}
+              onChange={handleChange}
+            >
+              <option value="">Select an option</option>
+              <option value="men">men</option>
+              <option value="women">women</option>
+              <option value="kid">kid</option>
+              <option value="NewCollections">NewCollections</option>
+            </select>
+          </div>
+          <div className="addproduct-itemfield">
+            <p>Product tags</p>
+            <input
+              type="text"
+              name="webtags"
+              value={websiteDetails.webtags}
+              onChange={handleChange}
+              placeholder="Type here"
+            />
+          </div>
+          <div className="addproduct-itemfield">
+            <p>Description</p>
+            <input
+              type="text"
+              name="webdescriptions"
+              value={websiteDetails.webdescriptions}
+              onChange={handleChange}
+              placeholder="Type here descriptions"
+            />
+          </div>
+          <div className="addproduct-itemfield">
+            <p>Product Images</p>
+            {webImages.map((image, index) => (
+              <div key={index} className="addproduct-itemfield">
+                <label htmlFor={`file-input${index}`}>
+                  <img
+                    className="addproduct-thumbnail-img"
+                    src={!image ? upload_area : URL.createObjectURL(image)}
+                    alt={`Upload Preview ${index + 1}`}
+                  />
+                </label>
+                <input
+                  type="file"
+                  id={`file-input${index}`}
+                  hidden
+                  onChange={handleImageChange(index)}
+                />
+              </div>
+            ))}
+          </div>
+          <button className="addproduct-btn" onClick={addProduct}>
+            ADD
+          </button>
         </div>
-        <button className="addproduct-btn" onClick={addProduct}>
-          ADD
-        </button>
       </div>
-    </div>
+    </>
   );
 };
 

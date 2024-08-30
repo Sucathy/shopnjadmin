@@ -8,7 +8,7 @@ const Navbar = () => {
     <>
       <div className="navbar">
         {/* <img src={navlogo} className="nav-logo" alt="" /> */}
-        <h1>sucathy</h1>
+        <h1>ShopSJ</h1>
         <div className="nav-login-register">
           <ul>
             <li>
