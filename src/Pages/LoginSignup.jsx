@@ -15,7 +15,7 @@ const LoginSignup = () => {
 
   const login = async () => {
     let dataObj;
-    await fetch("http://54.227.62.35:4000/adminlogin", {
+    await fetch("https://shopnjs.onrender.com/adminlogin", {
       method: "POST",
       headers: {
         Accept: "application/form-data",
@@ -38,7 +38,7 @@ const LoginSignup = () => {
 
   const signup = async () => {
     let dataObj;
-    await fetch("http://34.204.8.6:4000/adminsignup", {
+    await fetch("https://34.204.8.6:4000/adminsignup", {
       method: "POST",
       headers: {
         Accept: "application/form-data",

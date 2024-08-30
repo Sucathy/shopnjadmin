@@ -52,7 +52,7 @@ const AccountList = () => {
   // Fetch user data from API
   const fetchInfo = async () => {
     try {
-      const res = await fetch("http://54.227.62.35:4000/allusers");
+      const res = await fetch("https://shopnjs.onrender.com/allusers");
       const data = await res.json();
       if (Array.isArray(data)) {
         setAllUsers(

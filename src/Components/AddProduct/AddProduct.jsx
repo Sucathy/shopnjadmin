@@ -38,7 +38,7 @@ const AddProduct = () => {
     formData.append("product", image5);
     formData.append("product", image6);
 
-    await fetch("http://54.227.62.35:4000/upload", {
+    await fetch("https://shopnjs.onrender.com/upload", {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -58,7 +58,7 @@ const AddProduct = () => {
       product.image5 = dataObj.image5_url;
       product.image6 = dataObj.image6_url;
       console.log(product);
-      await fetch("http://54.227.62.35:4000/addproduct", {
+      await fetch("https://shopnjs.onrender.com/addproduct", {
         method: "POST",
         headers: {
           Accept: "application/json",

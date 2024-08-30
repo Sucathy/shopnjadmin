@@ -6,7 +6,7 @@ const WebsiteList = () => {
   const [allwebproducts, setAllwebProducts] = useState([]);
 
   const removeProduct = async (id) => {
-    await fetch("http://54.227.62.35:4000/removeproducts", {
+    await fetch("https://shopnjs.onrender.com/removeproducts", {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -15,13 +15,13 @@ const WebsiteList = () => {
       body: JSON.stringify({ id: id }),
     });
 
-    fetch("http://54.227.62.35:4000/allwebproducts")
+    fetch("https://shopnjs.onrender.com/allwebproducts")
       .then((res) => res.json())
       .then((data) => setAllwebProducts(data));
   };
   // Fetch all products from the server
   const fetchInfo = () => {
-    fetch("http://54.227.62.35:4000/allwebproducts")
+    fetch("https://shopnjs.onrender.com/allwebproducts")
       .then((res) => res.json())
       .then((data) => setAllwebProducts(data))
       .catch((error) => console.error("Error fetching products:", error));
